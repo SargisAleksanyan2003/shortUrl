@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'aleksanyan/short-url',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '09167ff1f97119b9aa52818e5eb21d67c3a85d97',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'aleksanyan/short-url' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '09167ff1f97119b9aa52818e5eb21d67c3a85d97',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

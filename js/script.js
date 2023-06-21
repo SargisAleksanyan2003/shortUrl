@@ -5,7 +5,7 @@ $(document).ready(function () {
 				url: $('#field_1').val()
 			})
 			.done(function (data) {
-				alert(data);
+				$('#message').html(data);
 			});
 	});
 });

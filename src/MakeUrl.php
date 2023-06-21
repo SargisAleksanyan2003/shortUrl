@@ -13,14 +13,13 @@ class MakeUrl
 		$this->db  = new \PDO('mysql:host=localhost;dbname=short_url', 'root', '');
 	}
 
-
 	public function create(string $url)
 	{
 		$this->url = $url;
 		if ($this->checkURL())
 			return $this->insert();
 		else
-			return $this->getError();
+			return $this->getError('URL не правильный');
 	}
 
 	private function insert(): string
@@ -33,12 +32,14 @@ class MakeUrl
 			'url' => $this->url,
 			'short_url' => $this->random,
 		]);
-		return $this->random;
+		echo 'Короткий URL: <a href="' . $this->random . '"> ' . $this->random . '</a>';
+		return true;
 	}
 
-	private function getError()
+	private function getError(string $error = '')
 	{
-		return 'Ошибка';
+		echo 'Ошибка: ' . $error;
+		return false;
 	}
 
 	private function checkURL(): bool
@@ -51,16 +52,6 @@ class MakeUrl
 
 	private static function getRandomUrl(): string
 	{
-
-		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-		$randomString = '';
-
-		for ($i = 0; $i < 7; $i++) {
-			$index = rand(0, strlen($characters) - 1);
-			$randomString .= $characters[$index];
-		}
-
-		return $_SERVER['HTTP_REFERER'] . 's/' . $randomString;
+		return $_SERVER['HTTP_REFERER'] . 's/' . bin2hex(random_bytes(2));
 	}
 }
