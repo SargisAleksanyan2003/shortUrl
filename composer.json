@@ -1,0 +1,17 @@
+{
+    "name": "aleksanyan/short-url",
+    "autoload": {
+        "psr-4": {
+            "classes\\": "src/classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "SargisAleksanyan2003",
+            "email": "79356839+SargisAleksanyan2003@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.13.4"
+    }
+}
