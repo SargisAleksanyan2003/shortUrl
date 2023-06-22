@@ -45,8 +45,10 @@ class MakeUrl
 
 		if ($result) {
 			echo 'Короткий URL: <a href="' .  $result[0]['short_url'] . '"> ' .  $result[0]['short_url'] . '</a>';
+
 			return false;
 		}
+
 		return true;
 	}
 	private function getError(string $error = '')
