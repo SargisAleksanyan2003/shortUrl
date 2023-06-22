@@ -2,6 +2,9 @@
 
 namespace classes;
 
+
+// Извлекаем необходимые данные для соединения с базой данных
+
 class MakeUrl
 {
 	private string $url;
@@ -10,7 +13,12 @@ class MakeUrl
 
 	public function __construct()
 	{
-		$this->db  = new \PDO('mysql:host=localhost;dbname=short_url', 'root', '');
+		$phinxConfig = include '../phinx.php';
+		$database = $phinxConfig['environments']['production'];
+		$dsn = $database['adapter'] . ':host=' . $database['host'] . ';dbname=' . $database['name'];
+		$username = $database['user'];
+		$password = $database['pass'];
+		$this->db  = new \PDO($dsn, $username, $password);
 	}
 
 	public function create(string $url)
@@ -22,7 +30,7 @@ class MakeUrl
 			return $this->getError('URL не правильный');
 	}
 
-	private function insert(): string
+	private function insert(): bool
 	{
 		if ($this->checkExist()) {
 			$this->random = $this::getRandomUrl();

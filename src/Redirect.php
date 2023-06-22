@@ -9,7 +9,12 @@ class Redirect
 
 	public function __construct()
 	{
-		$this->db  = new \PDO('mysql:host=localhost;dbname=short_url', 'root', '');
+		$phinxConfig = include '../phinx.php';
+		$database = $phinxConfig['environments']['production'];
+		$dsn = $database['adapter'] . ':host=' . $database['host'] . ';dbname=' . $database['name'];
+		$username = $database['user'];
+		$password = $database['pass'];
+		$this->db  = new \PDO($dsn, $username, $password);
 	}
 	public function openSite()
 	{
