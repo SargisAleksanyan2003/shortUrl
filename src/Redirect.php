@@ -9,7 +9,7 @@ class Redirect
 
 	public function __construct()
 	{
-		$phinxConfig = include '../phinx.php';
+		$phinxConfig = include 'phinx.php';
 		$database = $phinxConfig['environments']['production'];
 		$dsn = $database['adapter'] . ':host=' . $database['host'] . ';dbname=' . $database['name'];
 		$username = $database['user'];
