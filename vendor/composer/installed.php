@@ -3,7 +3,7 @@
         'name' => 'aleksanyan/short-url',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '09167ff1f97119b9aa52818e5eb21d67c3a85d97',
+        'reference' => '38a18d766b0b25b152eafd596462d103530d54c2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'aleksanyan/short-url' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '09167ff1f97119b9aa52818e5eb21d67c3a85d97',
+            'reference' => '38a18d766b0b25b152eafd596462d103530d54c2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

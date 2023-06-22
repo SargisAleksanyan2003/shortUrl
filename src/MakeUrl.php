@@ -24,18 +24,31 @@ class MakeUrl
 
 	private function insert(): string
 	{
-		$this->random = $this::getRandomUrl();
-
-		$sql = "INSERT INTO short_url (id, url, short_url) VALUES (:id, :url, :short_url)";
-		$this->db->prepare($sql)->execute([
-			'id' => null,
-			'url' => $this->url,
-			'short_url' => $this->random,
-		]);
-		echo 'Короткий URL: <a href="' . $this->random . '"> ' . $this->random . '</a>';
-		return true;
+		if ($this->checkExist()) {
+			$this->random = $this::getRandomUrl();
+			$sql = "INSERT INTO short_url (id, url, short_url) VALUES (:id, :url, :short_url)";
+			$this->db->prepare($sql)->execute([
+				'id' => null,
+				'url' => $this->url,
+				'short_url' => $this->random,
+			]);
+			echo 'Короткий URL: <a href="' . $this->random . '"> ' . $this->random . '</a>';
+			return true;
+		}
+		return false;
 	}
 
+	private function checkExist(): bool
+	{
+		$sql = "SELECT * FROM short_url WHERE url = '$this->url '";
+		$result = $this->db->query($sql)->fetchAll();
+
+		if ($result) {
+			echo 'Короткий URL: <a href="' .  $result[0]['short_url'] . '"> ' .  $result[0]['short_url'] . '</a>';
+			return false;
+		}
+		return true;
+	}
 	private function getError(string $error = '')
 	{
 		echo 'Ошибка: ' . $error;
