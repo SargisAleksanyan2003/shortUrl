@@ -11,5 +11,7 @@
             "email": "79356839+SargisAleksanyan2003@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
