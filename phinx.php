@@ -1,5 +1,10 @@
 <?php
 
+use classes\Redirect;
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname('.env'));
+$dotenv->load();
+
 return
 	[
 		'paths' => [
@@ -11,29 +16,29 @@ return
 			'default_environment' => 'development',
 			'production' => [
 				'adapter' => 'mysql',
-				'host' => 'localhost',
-				'name' => 'short_url',
-				'user' => 'root',
-				'pass' => '',
-				'port' => '3306',
+				'host' => $_ENV['DB_HOST'],
+				'name' =>  $_ENV['short_url'],
+				'user' =>  $_ENV['DB_USERNAME'],
+				'pass' =>  $_ENV['DB_PASSWORD'],
+				'port' =>  $_ENV['DB_PORT'],
 				'charset' => 'utf8',
 			],
 			'development' => [
 				'adapter' => 'mysql',
-				'host' => 'localhost',
-				'name' => 'short_url',
-				'user' => 'root',
-				'pass' => '',
-				'port' => '3306',
+				'host' => $_ENV['DB_HOST'],
+				'name' =>  $_ENV['short_url'],
+				'user' =>  $_ENV['DB_USERNAME'],
+				'pass' =>  $_ENV['DB_PASSWORD'],
+				'port' =>  $_ENV['DB_PORT'],
 				'charset' => 'utf8',
 			],
 			'testing' => [
 				'adapter' => 'mysql',
-				'host' => 'localhost',
-				'name' => 'short_url',
-				'user' => 'root',
-				'pass' => '',
-				'port' => '3306',
+				'host' => $_ENV['DB_HOST'],
+				'name' =>  $_ENV['short_url'],
+				'user' =>  $_ENV['DB_USERNAME'],
+				'pass' =>  $_ENV['DB_PASSWORD'],
+				'port' =>  $_ENV['DB_PORT'],
 				'charset' => 'utf8',
 			]
 		],
