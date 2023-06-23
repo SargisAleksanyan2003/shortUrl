@@ -47,14 +47,14 @@ https://shorturl.fun-x.ru/
 
 ## REST API
 
-###Сокращение ссылки
+### Сокращение ссылки
 Для сокращения ссылки необходимо выполнить HTTP-запрос GET к конечной точке API с параметром url, заключенным в двойные кавычки ("). В примере ниже используется cURL:
 
 Пример использования cURL:
 ```shell
 	curl -X GET http://localhost/api.php?url="https://vk.com/search?c%5Bper_page%5D=40&c%5Bq%5D=%D0%AE%D0%BB%D0%B8%D1%8F%20%D0%B0%D0%B3%D0%BE%D0%BF&c%5Bsection%5D=auto"
 ```
-###Получения полной ссылки
+### Получения полной ссылки
 Для получения полной ссылки необходимо выполнить HTTP-запрос GET к конечной точке API с параметром short_url, заключенным в двойные кавычки ("). В примере ниже используется cURL:
 ```shell
 	curl -X GET http://localhost/api.php?short_url="http://localhost/s/be1e"
