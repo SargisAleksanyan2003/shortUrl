@@ -4,9 +4,6 @@ namespace classes;
 
 use classes\traits\AddUrl;
 
-
-// Извлекаем необходимые данные для соединения с базой данных
-
 class MakeUrl
 {
 	use AddUrl;

@@ -17,7 +17,7 @@ return
 			'production' => [
 				'adapter' => 'mysql',
 				'host' => $_ENV['DB_HOST'],
-				'name' =>  $_ENV['short_url'],
+				'name' =>  $_ENV['DB_DATABASE'],
 				'user' =>  $_ENV['DB_USERNAME'],
 				'pass' =>  $_ENV['DB_PASSWORD'],
 				'port' =>  $_ENV['DB_PORT'],
@@ -26,7 +26,7 @@ return
 			'development' => [
 				'adapter' => 'mysql',
 				'host' => $_ENV['DB_HOST'],
-				'name' =>  $_ENV['short_url'],
+				'name' =>  $_ENV['DB_DATABASE'],
 				'user' =>  $_ENV['DB_USERNAME'],
 				'pass' =>  $_ENV['DB_PASSWORD'],
 				'port' =>  $_ENV['DB_PORT'],
@@ -35,7 +35,7 @@ return
 			'testing' => [
 				'adapter' => 'mysql',
 				'host' => $_ENV['DB_HOST'],
-				'name' =>  $_ENV['short_url'],
+				'name' =>  $_ENV['DB_DATABASE'],
 				'user' =>  $_ENV['DB_USERNAME'],
 				'pass' =>  $_ENV['DB_PASSWORD'],
 				'port' =>  $_ENV['DB_PORT'],

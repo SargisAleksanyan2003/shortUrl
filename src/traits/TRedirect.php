@@ -9,10 +9,16 @@ trait TRedirect
 	use TDb;
 	public function openSite()
 	{
-		$sql = "SELECT * FROM short_url WHERE short_url = '$this->url '";
-		$result = $this->db->query($sql)->fetchAll();
-		if ($result) {
-			return $this->redirect($result[0]['url']);
+		$sql = "SELECT * FROM $_ENV[DB_DATABASE] WHERE short_url = :email";
+        $query = $this->db->prepare($sql);
+        $query->execute([
+            "email" => $this->url
+        ]);
+
+        $result = $query->fetch(\PDO::FETCH_ASSOC);
+
+        if (!empty($result)) {
+			return $this->redirect($result['url']);
 		}
 		return false;
 	}
