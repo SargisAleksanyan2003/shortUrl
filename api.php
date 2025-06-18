@@ -24,5 +24,4 @@ if (isset($_GET['short_url'])) {
 
 	$shortUrl = new Api();
 	print_r(json_encode($shortUrl->create($url)));
-
 }
